@@ -1,5 +1,6 @@
 package org.gfg.foodApplicationMain.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -28,6 +29,7 @@ public class OrderDetails {
     private Date updatedAt;
     private Integer userId;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn
     private User user;

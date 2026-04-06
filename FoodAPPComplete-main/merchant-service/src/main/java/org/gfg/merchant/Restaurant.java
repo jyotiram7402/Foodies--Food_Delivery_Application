@@ -1,5 +1,6 @@
 package org.gfg.merchant;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -29,6 +30,7 @@ public class Restaurant {
 
     private String merchantEmail;
     private boolean isActive;
+    @JsonIgnore
     @OneToMany(mappedBy = "restaurantId")
     private List<MenuItems> menuItems;
 

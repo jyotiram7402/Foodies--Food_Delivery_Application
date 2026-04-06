@@ -1,6 +1,7 @@
 package org.gfg.foodApplicationMain.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -44,6 +45,7 @@ public class User implements UserDetails {
     private String longitude;
 
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<OrderDetails> orderList;
 
